@@ -184,6 +184,9 @@ var Controls = {
       }
     });
     timeCount = empties + 1;
+
+    // force graph update
+    graph.update();
   }
 
 }
