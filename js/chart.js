@@ -1,7 +1,21 @@
 // set up our data series with 150 random data points
 
+var xOffset = -20,
+    yOffset = -400,
+    graphWidth = window.innerWidth + xOffset,
+    graphHeight = window.innerHeight/2;
+
+$(window).on('resize', function(){
+  graph.configure({
+    width: window.innerWidth + xOffset,
+    height: window.innerHeight + yOffset
+  });
+  graph.render();
+});
+
+
 var empties = 50;
-var initValue = 0.1;
+var initValue = 0;
 var timeCount = empties + 1;
 var seriesData = [ [], [], [], [] ];
 var isRunning = true;
@@ -14,32 +28,57 @@ seriesData.forEach(function(series, index) {
 
 var graph = new Rickshaw.Graph( {
   element: document.getElementById("chart"),
-  width: 1200,
-  height: 500,
+  width: graphWidth,
+  height: graphHeight,
   renderer: 'line',
   stroke: true,
+  strokeWidth: 5,
   preserve: true,
-  series: [
+  /*series: [
     {
-      color: '#e6ad47',
+      color: 'rgba(145, 237, 255, 0.3)',
+      stroke: 'none',
       data: seriesData[0],
       name: 'Links vorne'
     }, {
-      color: '#ff5755',
+      color: 'rgba(121, 215, 254, 0.3)',
+      stroke: 'none',
       data: seriesData[1],
       name: 'Links hinten'
     }, {
-      color: '#64d182',
+      color: 'rgba(163, 197, 117, 0.3)',
+      stroke: 'none',
       data: seriesData[2],
       name: 'Rechts vorne'
     }, {
-      color: '#8e36d9',
+      color: 'rgba(98, 187, 138, 0.3)',
+      stroke: 'none',
+      data: seriesData[3],
+      name: 'Rechts hinten'
+    }
+  ]*/
+  series: [
+    {
+      color: 'rgba(253, 0, 103, 0.85)',
+      data: seriesData[0],
+      name: 'Links vorne'
+    }, {
+      color: 'rgba(161, 87, 166, 0.85)',
+      data: seriesData[1],
+      name: 'Links hinten'
+    }, {
+      color: 'rgba(15, 166, 100, 0.85)',
+      data: seriesData[2],
+      name: 'Rechts vorne'
+    }, {
+      color: 'rgba(14, 128, 118, 0.85)',
       data: seriesData[3],
       name: 'Rechts hinten'
     }
   ]
 } );
 
+graph.renderer.unstack = true;
 graph.render();
 
 var legend = new Rickshaw.Graph.Legend({

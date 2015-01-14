@@ -1,18 +1,69 @@
-#chart_container {
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;
+	color: #101010;
+}
+
+h1 {
+	font-size: 30px;
+	font-weight: 900;
+}
+
+#chart-container {
 	float: left;
 	position: relative;
+	margin-bottom: 10px;
 }
 
 #chart {
 	display: inline-block;
 }
 
-#legend {
-	display: inline-block;
-	position: relative;
-	left: 8px;
+#legend-container {
+	float: left;
+	max-width: 100%;
 }
 
-#content {
-	width: 1200px;
+#legend-container div,
+#legend-shoes {
+	margin-right: 10px;
+}
+
+#legend-shoes {
+	float: left;
+	display: block;
+	width: 180px;
+	height: auto;
+}
+
+#legend {
+	float: left;
+	display: block;
+	position: normal;
+	background: #101010;
+	min-width: 200px;
+}
+
+#controls {
+	float: left;
+}
+
+button {
+	font-family: 'Source Sans Pro', sans-serif;
+	padding: 4px 16px;
+	font-size: 18px;
+	background: #101010;
+	color: #fff;
+	border-radius: 4px;
+	border-width: 0px;
+}
+
+button:hover {
+	cursor: pointer;
+	background: #222;
+}
+
+button:focus {
+	background: gray;
+	outline: none;
 }

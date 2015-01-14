@@ -6,6 +6,7 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/styles.css" />
     <link type="text/css" rel="stylesheet" href="./js/vendor/rickshaw/rickshaw.min.css">
 </head>
@@ -13,10 +14,15 @@
 
 <div id="content">
 
-	<div id="chart_container">
+    <h1>stellvertreter LIVE-VIEW</h1>
+
+	<div id="chart-container">
 		<div id="chart"></div>
-		<div id="legend"></div>
 	</div>
+    <div id="legend-container">
+        <img id="legend-shoes" src="img/legend.png" />
+        <div id="legend"></div>
+    </div>
 	<div id="controls">
 		<button id="play">Play</button>
 		<button id="pause">Pause</button>
